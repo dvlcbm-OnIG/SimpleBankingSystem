@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 
 public static class Program
 {
@@ -64,3 +63,4 @@ public static class Program
         Console.ReadKey();
     }
 }
+
