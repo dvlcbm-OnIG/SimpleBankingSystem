@@ -10,7 +10,7 @@ public static class Program
         Console.WriteLine();
         Console.ReadKey();
     }
-    public static void Withdraww()
+    public static void Withdraw()
     {
         Console.Write("Enter amount to withdraw: ");
         double withdraw = Convert.ToDouble(Console.ReadLine());
@@ -29,7 +29,7 @@ public static class Program
             Console.ReadKey();
         }
     }
-    public static void Depositt()
+    public static void Deposit()
     {
         Console.Write("Enter amount to deposit: ");
         double deposit = Convert.ToDouble(Console.ReadLine());
@@ -75,3 +75,4 @@ public static class Program
         Console.ReadKey();
     }
 }
+
