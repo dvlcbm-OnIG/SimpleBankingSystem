@@ -1,11 +1,45 @@
-﻿using System;
+using System;
 
 public static class Program
 {
+  public static  double balance = 20;
+  public static int choice;
+    public static void CheckBalance()
+    {
+        Console.WriteLine($"Balance: ${balance}");
+        Console.WriteLine();
+        Console.ReadKey();
+    }
+    public static void Withdraww()
+    {
+        Console.Write("Enter amount to withdraw: ");
+        double withdraw = Convert.ToDouble(Console.ReadLine());
+
+        if (withdraw <= balance)
+        {
+            Console.WriteLine($"Succesfully withdrew ${withdraw} from your balance");
+            Console.WriteLine();
+            balance -= withdraw;
+            Console.ReadKey();
+        }
+        else
+        {
+            Console.Write("Insufficient balance!");
+            Console.WriteLine();
+            Console.ReadKey();
+        }
+    }
+    public static void Depositt()
+    {
+        Console.Write("Enter amount to deposit: ");
+        double deposit = Convert.ToDouble(Console.ReadLine());
+        balance += deposit;
+        Console.WriteLine($"successfully deposited ${deposit} in to your balance");
+        Console.WriteLine();
+        Console.ReadKey();
+    }
     public static void Introduce()
     {
-        double balance = 20;
-        int choice;
 
        do
         {
@@ -15,35 +49,13 @@ public static class Program
             switch (choice)
             {
                 case 1:
-                    Console.WriteLine($"Balance: ${balance}");
-                    Console.WriteLine();
-                    Console.ReadKey();
+                    CheckBalance();
                     break;
                 case 2:
-                    Console.Write("Enter amount to withdraw: ");
-                    double withdraw = Convert.ToDouble(Console.ReadLine());
-
-                    if (withdraw <= balance)
-                    {
-                        Console.WriteLine($"Succesfully withdrew ${withdraw} from your balance");
-                        Console.WriteLine();
-                        balance -= withdraw;
-                        Console.ReadKey();
-                    }
-                    else
-                    {
-                        Console.Write("Insufficient balance!");
-                        Console.WriteLine();
-                        Console.ReadKey();
-                    }
+                    Withdraww();
                     break;
                 case 3:
-                    Console.Write("Enter amount to deposit: ");
-                    double deposit = Convert.ToDouble(Console.ReadLine());
-                    balance += deposit;
-                    Console.WriteLine($"successfully deposited ${deposit} in to your balance");
-                    Console.WriteLine();
-                    Console.ReadKey();
+                    Depositt();
                     break;
                 case 4:
                     break;
@@ -63,4 +75,3 @@ public static class Program
         Console.ReadKey();
     }
 }
-
